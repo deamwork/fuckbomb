@@ -1,0 +1,24 @@
+.cut {
+	color: green;
+}
+
+.no-cut {
+	color: red;
+}
+
+.bombInfo label {
+	font-weight: normal;	
+}
+
+.passwordInput {
+  padding-bottom: 20px;
+}
+
+.passwordInput .inputs {
+	padding-bottom: 20px;
+}
+
+/* Angular ngCloak */
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}

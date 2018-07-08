@@ -1,0 +1,20 @@
+<ul class="bombInfo list-group">
+  <li class="list-group-item" ng-class="{'list-group-item-info': globals.needsParallel}">
+    <label>有<strong>平行埠</strong>么？ (超级长的那个)</br>
+      <input type="radio" ng-model="globals.hasParallelPort" ng-value="true"/>有
+      <input type="radio" ng-model="globals.hasParallelPort" ng-value="false"/>么得
+    </label>
+  </li>
+  <li class="list-group-item" ng-class="{'list-group-item-info': globals.needsBatteries}">
+    <label>有<strong>两个以上</strong>电池？</br>
+      <input type="radio" ng-model="globals.hasTwoBatteries" ng-value="true"/>对
+      <input type="radio" ng-model="globals.hasTwoBatteries" ng-value="false"/>么得
+    </label>
+  </li>
+  <li class="list-group-item" ng-class="{'list-group-item-info': globals.needsSerial}">
+    <label>序列号结尾<strong>是偶数</strong>么?</br>
+      <input type="radio" ng-model="globals.hasEvenSerial" ng-value="true"/>废话
+      <input type="radio" ng-model="globals.hasEvenSerial" ng-value="false"/>不是
+    </label>
+  </li>
+</ul>

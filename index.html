@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<!-- CSS -->
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/app.css">
+	<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+</head>
+<body ng-app="app" ng-controller="AppController">
+	<div class="container" ng-cloak>
+		<div class="page-header">
+			<h1>拆弹专家助手</h1>
+			V <select ng-model="selectedVersion" ng-options="v for v in versions"></select>
+		</div>
+		<div class="container-fluid">
+			<div class="row">
+				<ul class="nav nav-pills nav-justified">
+					<li ng-class="{'active': moduleNum === 0}"><a href="#" ng-click="setModule(0)">巨TM复杂电线</a></li>
+					<li ng-class="{'active': moduleNum === 1}"><a href="#" ng-click="setModule(1)">猜单词</a></li>
+				</ul>
+			</div>
+			<div class="row main-switch-container" ng-switch on="moduleNum">
+				<div class="error" ng-switch-default>
+					<h2>妈卖批吔……出问题了</h2>
+				</div>
+
+				<!-- bombInfo may be usable for other modules. Keep it outside of the ng-switch -->
+				<!-- TODO: Consider adding a scope function bombInfoNeeded() that does the module check logic -->
+				<bomb-info ng-if="moduleNum === 0"></bomb-info>
+
+				<complicated-wires ng-switch-when="0" selectedVersion="selectedVersion" globals="globals"></complicated-wires>
+				<passwords ng-switch-when="1"></passwords>
+			</div>
+		</div>
+	</div>
+
+	<!-- Scripts -->
+	<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="bower_components/lodash/lodash.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/controllers.js"></script>
+    <script type="text/javascript" src="js/directives.js"></script>
+    <script type="text/javascript" src="js/filters.js"></script>
+</body>
+</html>

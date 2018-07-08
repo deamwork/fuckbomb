@@ -1,0 +1,39 @@
+<div class="complicatedWires" ng-controller="ComplicatedWiresController">
+	<div class="complicated-wires">
+		<h2>巨TM复杂剪电线</h2>
+
+		<button type="button" class="btn btn-success btn-md" ng-click="addWire()">
+			<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> 添加电线
+		</button>
+		<button type="button" class="btn btn-danger btn-md" ng-click="clearWires()">
+			<span class="glyphicon glyphicon-remove" aria-hidden="true"></span> 清空
+		</button>
+
+		<div class="wire-list container">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>有灯</th>
+						<th>蓝色</th>
+						<th>红色</th>
+						<th>白色</th>
+						<th>带星星</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="complicatedWire" ng-repeat="wire in wires" ></tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<div class="final-output">
+		<h2>剪嘛不剪</h2>
+		<ol class="output">
+			<li ng-repeat="wire in wires">
+				<complicated-wire-result></complicated-wire-result>
+			</li>
+		</ol>
+	</div>
+</div>
